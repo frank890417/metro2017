@@ -21,5 +21,8 @@ use Illuminate\Http\Request;
 Route::get('/lang/{lang}/{name}',"HomeController@lang");
 
 
+Route::get('/regist2018/all',"Regist2018Controller@registlist");
+
+
 
 // Route::get('/test','RegistController@test');

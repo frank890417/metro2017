@@ -32,6 +32,8 @@ Route::post('/registwork2018', 'Regist2018Controller@create');
 Route::get('/sendmail','RegistController@sendmail');
 
 
+Route::get('/regist2018/all',"Regist2018Controller@registlist");
+
 Route::get('/test','RegistController@test');
 
 // Route::get('/lang/{{lang}}/{{name}}',"HomeController@lang");

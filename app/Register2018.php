@@ -25,4 +25,8 @@ class Register2018 extends Model
                         "work_2_content",
                         "work_2_file"];
 
+    public function creators()
+    {
+        return $this->hasMany('App\Creator2018',"register_id","id");
+    }
 }

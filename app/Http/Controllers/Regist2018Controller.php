@@ -127,17 +127,17 @@ class Regist2018Controller extends Controller
     }
 
     public function registlist(){
-    	$registers = DB::table('registers')
-    				->join('creators','registers.id','=','creators.register_id')
-    				// ->join('stations','registers.station','=','stations.id')
-    				->select('registers.*','creators.name','stations.name_cht as station_name')
-    				->where('creators.rank','=','1')
-                    ->orderBy('id','asc')
-    				->get();
+    	// $registers = DB::table('registers')
+    	// 			->join('creators','registers.id','=','creators.register_id')
+    	// 			// ->join('stations','registers.station','=','stations.id')
+    	// 			// ->select('registers.*','creators.name','stations.name_cht as station_name')
+    	// 			->where('creators.rank','=','1')
+        //             ->orderBy('id','asc')
+        // 			->get();
+        $registers = Register2018::with('creators')->get();
     	// Register::all();
 
-    	return view('regist_manage')
-    			->with('registers',$registers);
+    	return $registers;
     }
 
     public function getfile($stationname,$dirname,$filename){
