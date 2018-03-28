@@ -51,7 +51,7 @@ class Regist2018Controller extends Controller
     	$regist->save();
 
         //設定上傳資料夾
-        $folder="/ID".$regist->id.'-'.$input['creator_0_name'];
+        $folder="/2018/ID".$regist->id.'-'.$input['creator_0_name'];
 
 
     	//儲存所有創作者
@@ -114,7 +114,13 @@ class Regist2018Controller extends Controller
         //寄送通知信件
         Mail::send('emails.testemail', ['user' => $first_creator->name], function ($m) use ($first_creator) {
             $m->from('service@taipeisoundscape.com', '台北聲音地景計畫');
-            $m->to([$first_creator->mail,"sd.lin@harvestmusician.com","hsinjulee@harvestmusician.com","info@taipeisoundscape.com"], $first_creator->name)->subject('「台北聲音地景計畫-站體環境音樂」徵件報名成功通知信');
+            $m->to([$first_creator->mail], $first_creator->name);
+            // $m->bcc([// "frank890417@gmail.com",
+            // // "sd.lin@harvestmusician.com",
+            // // "hsinjulee@harvestmusician.com",
+            // // "info@taipeisoundscape.com"
+            // ], "捷運地景音樂主辦");    
+            $m->subject('「台北聲音地景計畫-站體環境音樂」徵件報名成功通知信');
         });
 
     	// return $regist;
