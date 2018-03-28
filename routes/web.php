@@ -28,6 +28,7 @@ Route::group(['middleware'=>['auth']],function(){
 Route::get('/regist_success','RegistController@success');
 Route::get('/registwork', 'RegistController@index');
 Route::post('/registwork', 'RegistController@create');
+Route::post('/registwork2018', 'Regist2018Controller@create');
 Route::get('/sendmail','RegistController@sendmail');
 
 
