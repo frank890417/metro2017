@@ -18,6 +18,7 @@ class Creator2018 extends Migration
             $table->increments('id');
             $table->string("register_id")->default('');
             $table->integer("rank");
+            $table->integer("age")->default(0);
             $table->string("name",500)->default('');
             $table->string("phone",500)->default('');
             $table->string("mail",500)->default('');
