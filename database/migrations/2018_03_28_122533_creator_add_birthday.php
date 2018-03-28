@@ -14,7 +14,7 @@ class CreatorAddBirthday extends Migration
     public function up()
     {
         //
-        Schema::table('creators',function($table){
+        Schema::table('creators2018',function($table){
             $table->date('birthday')->nullable();
         });
     }
@@ -27,7 +27,7 @@ class CreatorAddBirthday extends Migration
     public function down()
     {
         //
-        Schema::table('creators',function($table){
+        Schema::table('creators2018',function($table){
             $table->dropColumn('birthday');
         });
     }
