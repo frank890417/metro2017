@@ -127,7 +127,7 @@ class Regist2018Controller extends Controller
 
     	// return $regist;
     	// return Redirect::to('/registwork/manage');
-        return ["status"=>"success!"];
+        return "<html><body>感謝您參與「台北聲音地景計畫-站體環境音樂」徵件活動<br>已成功收到您的音樂作品<br>徵選結果將於5/25公佈<br>敬請靜候佳音<br><br>Thank you for application. You’ve already upload your work to Taipei Soundscape<br>Program “MRT Station Ambient Music Competition”. Award announcement will be post on the website of the competition on May 25, 2017 at 12 P.M.<br><br><a href='http://taipeisoundscape.com'>返回官網</a></body></html>";
     }
 
     public function success(){
