@@ -103,12 +103,12 @@ class Regist2018Controller extends Controller
         if (Input::file('work_1_file')){
             $work_filename='ID'.$regist->id.'-'.$input['creator_0_name'].'-作品-'.$input['work_1_name'].'.'.Input::file('work_1_file')->getClientOriginalExtension();
             Storage::disk('public')->putFileAs($folder,Input::file('work_1_file'),$work_filename);
-            $regist->work_2_file= $folder."/".$work_filename;
+            $regist->work_1_file= $folder."/".$work_filename;
         }
         if (Input::file('work_2_file')){
             $work_filename='ID'.$regist->id.'-'.$input['creator_0_name'].'-作品-'.$input['work_2_name'].'.'.Input::file('work_2_file')->getClientOriginalExtension();
             Storage::disk('public')->putFileAs($folder,Input::file('work_2_file'),$work_filename);
-            $regist->work_3_file= $folder."/".$work_filename;
+            $regist->work_2_file= $folder."/".$work_filename;
         }
 
     	// $regist->agreement_file= "ID".$regist->id.'作品-'.$first_creator->name."/".$agreement_filename;
