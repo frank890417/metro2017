@@ -119,11 +119,12 @@ class Regist2018Controller extends Controller
         Mail::send('emails.testemail', ['user' => $first_creator->name], function ($m) use ($first_creator) {
             $m->from('service@taipeisoundscape.com', '台北聲音地景計畫');
             $m->to([$first_creator->mail], $first_creator->name);
-            // $m->bcc([// "frank890417@gmail.com",
-            // // "sd.lin@harvestmusician.com",
-            // // "hsinjulee@harvestmusician.com",
-            // // "info@taipeisoundscape.com"
-            // ], "捷運地景音樂主辦");    
+            $m->bcc(["frank890417@gmail.com",
+            "sd.lin@harvestmusician.com",
+            "hsinjulee@harvestmusician.com",
+            "info@taipeisoundscape.com",
+            "turtle8313@gmail.com"
+            ], "捷運地景音樂主辦");    
             $m->subject('「台北聲音地景計畫-站體環境音樂」徵件報名成功通知信');
         });
 
