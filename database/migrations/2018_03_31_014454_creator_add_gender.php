@@ -15,7 +15,7 @@ class CreatorAddGender extends Migration
     {
         //
         Schema::table('creators2018',function($table){
-            $table->date('gender')->nullable();
+            $table->string('gender')->nullable();
         });
     }
 
