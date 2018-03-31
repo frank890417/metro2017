@@ -61,7 +61,7 @@ class Regist2018Controller extends Controller
     		$creator->rank=$i;
     		$creator->name=$input['creator_'.$i.'_name'];
     		$creator->gender=$input['creator_'.$i.'_gender'];
-    		$creator->attend_workshop=$input['creator_'.$i.'_workshop'];
+    		$creator->attend_workshop=$input['creator_'.$i.'_workshop']?1:0;
     		$creator->birthday=$input['creator_'.$i.'_birthday'];
             $creator->phone=$input['creator_'.$i.'_phone'];
     		$creator->age=$input['creator_'.$i.'_age'];
