@@ -23,7 +23,13 @@ class Regist2018Controller extends Controller
     //
 
     public function index(){
-    	$stations = Station::all();
+        $input = Input::all();
+        if ($input['token']!="MRT2018Manage"){
+            return response('Unauthorized.', 401);
+        }
+        
+        $stations = Station::all();
+        
     	return view('registwork')
     			->with('stations',$stations);
     }

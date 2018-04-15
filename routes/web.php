@@ -20,13 +20,12 @@ Auth::routes();
 
 
 Route::group(['middleware'=>['auth']],function(){
-	Route::get('/registwork/file/{stationname}/{dirname}/{filename}', 'RegistController@getfile');
 	Route::get('/registwork/manage/{id}', 'RegistController@registview');
 	Route::get('/registwork/manage', 'RegistController@registlist');
-	Route::get('/registwork', 'RegistController@index');
-	Route::get('/regist2018/all',"Regist2018Controller@registlist");
 });
-
+Route::get('/registwork/file/{stationname}/{dirname}/{filename}', 'RegistController@getfile');
+Route::get('/registwork', 'RegistController@index');
+Route::get('/regist2018/all',"Regist2018Controller@registlist");
 Route::get('/regist_success','RegistController@success');
 Route::post('/registwork', 'RegistController@create');
 Route::post('/registwork2018', 'Regist2018Controller@create');
