@@ -151,6 +151,11 @@ class Regist2018Controller extends Controller
     	// 			->where('creators.rank','=','1')
         //             ->orderBy('id','asc')
         // 			->get();
+
+        $input = Input::all();
+        if ($input['token']!="MRT2018Manage"){
+            return response('Unauthorized.', 401);
+        }
         $registers = Register2018::with('creators')->get();
     	// Register::all();
 
