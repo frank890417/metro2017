@@ -24,6 +24,7 @@ Route::group(['middleware'=>['auth']],function(){
 	Route::get('/registwork/manage/{id}', 'RegistController@registview');
 	Route::get('/registwork/manage', 'RegistController@registlist');
 	Route::get('/registwork', 'RegistController@index');
+	Route::get('/regist2018/all',"Regist2018Controller@registlist");
 });
 
 Route::get('/regist_success','RegistController@success');
@@ -32,7 +33,6 @@ Route::post('/registwork2018', 'Regist2018Controller@create');
 Route::get('/sendmail','RegistController@sendmail');
 
 
-Route::get('/regist2018/all',"Regist2018Controller@registlist");
 
 Route::get('/test','RegistController@test');
 
