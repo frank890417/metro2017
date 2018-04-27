@@ -162,6 +162,25 @@ class Regist2018Controller extends Controller
     	return $registers;
     }
 
+     public function creatorlist(){
+    	// $registers = DB::table('registers')
+    	// 			->join('creators','registers.id','=','creators.register_id')
+    	// 			// ->join('stations','registers.station','=','stations.id')
+    	// 			// ->select('registers.*','creators.name','stations.name_cht as station_name')
+    	// 			->where('creators.rank','=','1')
+        //             ->orderBy('id','asc')
+        // 			->get();
+
+        // $input = Input::all();
+        // if ($input['token']!="MRT2018Manage"){
+        //     return response('Unauthorized.', 401);
+        // }
+        // $registers = Register2018::with('creators')->get();
+    	// Register::all();
+
+    	return Creator2018::all();
+    }
+
     public function getfile($stationname,$dirname,$filename){
     	$files = storage_path('app/public/'.$stationname.'/'.$dirname.'/'.$filename);
     	return response()->file($files);
