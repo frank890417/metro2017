@@ -36,9 +36,10 @@ class Regist2018Controller extends Controller
 
     public function create(Request $request){
 
-        return "很遺憾您的作品已經超過徵件時間<br>還是非常感謝您參與「台北聲音地景計畫-站體環境音樂」徵件活動<br>徵選結果將於6/25公佈於官方網站<br><br><br>Thank you so much for your participation in the MRT Station Ambient Music competition. <br>The official event and activities has come to an end.<br> 
-The Final results will be posted on our website on 6/25. Please stay tuned with us and thank you again for a great round of participation with the MRT Station Ambient Music Competition.";
-        
+//        return "很遺憾您的作品已經超過徵件時間<br>還是非常感謝您參與「台北聲音地景計畫-站體環境音樂」徵件活動<br>徵選結果將於6/25公佈於官方網站<br><br><br>Thank you so much for your participation in the MRT Station Ambient Music competition. <br>The official event and activities has come to an end.<br> 
+//The Final results will be posted on our website on 6/25. Please stay tuned with us and thank you again for a great round of participation with the MRT Station Ambient Music Competition.";
+
+
         $input = Input::all();
         // $station = Station::find($input['station']);
         $regist = new Register2018($input);
